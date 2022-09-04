@@ -8,6 +8,7 @@ import 'package:mix_stack_manager/widget/home_widget.dart';
 class IRouterTable{
   List<GetPage> pages = [];
   List<GetPage> installRouters(){
+    pages.clear();
     return pages;
   }
 }
