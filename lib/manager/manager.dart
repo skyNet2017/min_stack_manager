@@ -93,7 +93,9 @@ class RouteNavigatorObserver extends NavigatorObserver {
     String? preRoute = previousRoute?.settings.name;
 
     if (currentRoute == null) {
-      throw Exception("入栈的路由为空？这应该是不可能的");
+      print("入栈的路由为空,应该是弹出了dialog/snakbar");
+      return ;
+     // throw Exception("入栈的路由为空？这应该是不可能的-dialog");
     }
     var msgBean =
         SendMessage.flutterRouteChangeMsg(type, currentRoute, preRoute);

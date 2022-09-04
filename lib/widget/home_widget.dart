@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mix_stack_manager/manager/manager.dart';
 import 'package:mix_stack_manager/manager/router_mapper.dart';
+import 'package:mix_stack_manager/router/RouterManager.dart';
+
+import '../translations/HomeMsgs.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
@@ -34,6 +37,22 @@ class HomeWidget extends StatelessWidget {
                   RouterHelper.openNative(route: NativeMapper.NATIVE_VIEW);
                 },
                 child: Text("也可以打开Native的Activity")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      title:"所有路由表pages",
+                      content: Text(AppRouterCenter.share.installRouters().toString())
+                  );
+                },
+                child: Text("查看所有路由表pages")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      title:"所有翻译",
+                      content: Text(MsgCenter.share.collectTransEN().toString())
+                  );
+                },
+                child: Text("查看所有翻译")),
           ],
         ),
       ),
