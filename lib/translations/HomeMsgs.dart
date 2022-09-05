@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 class Messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-    'en_US': MsgCenter.share.collectTransEN(),
-    'de_DE':  MsgCenter.share.collectTransIN()
+    'en': MsgCenter.share.collectTransEN(),
+    'in':  MsgCenter.share.collectTransIN()
   };
 }
 
@@ -40,7 +40,8 @@ mixin HomeMsg on BaseGetXTrans{
   Map<String, String> collectTransEN() {
     var map = super.collectTransIN();
     Map<String, String> other = {
-      'home_hello': 'Hello World-home-en',
+      "home_hello": "Hello World-home-en",
+      "home_hello2": "Hello World-home-en2",
     };
     map.addAll(other);
     return map;
